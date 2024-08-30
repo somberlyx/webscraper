@@ -1,8 +1,11 @@
 import HeroCarousel from "@/components/HeroCarousel"
 import Searchbar from "@/components/Searchbar"
 import Image from "next/image"
+import { getAllProducts } from "@/lib/actions"
 
 const Home = async () => {
+  const allProducts = await getAllProducts();
+
   return (
     <>
       <section className="px-6 md:px-20 py-24">
@@ -24,7 +27,7 @@ const Home = async () => {
             </h1>
 
             <p className="mt-6">
-            Empower your growth with self-serve analytics designed to help you convert, engage, and retain customers more effectively.
+            Empower your growth with self-serve analytics designed to help you convert, engage, and retain more.
             </p>
 
             <Searchbar />
@@ -36,6 +39,12 @@ const Home = async () => {
 
       <section className="trending-section">
         <h2 className="section-text">Trending</h2>
+        <div className="flex flex-wrap gap-x-8 gap-y-16">
+          {allProducts?.map((product) => (
+            <div>{product.title}</div>
+          ))}
+        </div>
+
       </section>
     </>
   )
