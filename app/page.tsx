@@ -1,3 +1,4 @@
+import Searchbar from "@/components/Searchbar"
 import Image from "next/image"
 
 const Home = async () => {
@@ -24,6 +25,8 @@ const Home = async () => {
             <p className="mt-6">
             Empower your growth with self-serve analytics designed to help you convert, engage, and retain customers more effectively.
             </p>
+
+            <Searchbar />
           </div>
         </div>
       </section>
