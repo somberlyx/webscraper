@@ -1,7 +1,7 @@
 "use client"
 
 import { FormEvent, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, Transition, TransitionChild } from '@headlessui/react'
 import Image from 'next/image'
 import { addUserEmailToProduct } from '@/lib/actions'
 
@@ -39,7 +39,7 @@ const Modal = ({ productId }: Props) => {
         <Dialog as="div" onClose={closeModal} className="dialog-container">
           <div className="fixed inset-0 bg-black opacity-30" aria-hidden="true" />
           <div className="min-h-screen px-4 text-center">
-            <Transition.Child
+            <TransitionChild
               as="div"
               enter="ease-out duration-300"
               enterFrom="opacity-0"
@@ -109,7 +109,7 @@ const Modal = ({ productId }: Props) => {
                   </button>
                 </form>
               </div>
-            </Transition.Child>
+            </TransitionChild>
           </div>
         </Dialog>
       </Transition>
